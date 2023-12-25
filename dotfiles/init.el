@@ -1,8 +1,10 @@
 ;;Note, there is no guarantee the file is correctly written (such as cua-mode being proper with or without setq), so YMMV and editing will be required certainly.
 (require 'package)
 
-(setq auto-save-default nil)
-(setq backup-inhibited t)
+
+;;Commented out by default, because sometimes emacs is crash prone such as on windows.
+;;(setq auto-save-default nil)
+;;(setq backup-inhibited t)
 
 (setq column-number-mode t)
 (setq cua-mode t)
@@ -38,3 +40,5 @@
 
 (add-hook 'html-mode-hook (lambda () (electric-indent-local-mode -1)))
 (add-hook 'sh-mode-hook (lambda () (sh-electric-here-document-mode -1)))
+
+(add-hook 'fountain-mode-hook (lambda () (writegood-mode 1)))
